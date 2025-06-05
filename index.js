@@ -35,7 +35,7 @@ async function main() {
     priorityFee: kaspaWasm.kaspaToSompi("0.1"),
     changeAddress: address,
     networkId: "testnet-10",
-    payload: "",
+    payload: "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
   });
 
   const txIds = [];
