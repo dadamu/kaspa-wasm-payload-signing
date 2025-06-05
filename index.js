@@ -35,12 +35,13 @@ async function main() {
     priorityFee: kaspaWasm.kaspaToSompi("0.1"),
     changeAddress: address,
     networkId: "testnet-10",
-    payload: "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+    payload: "",
   });
 
   const txIds = [];
   while ((pending = await txGenerator.next())) {
-    await pending.sign([privateKey]);
+    const test = await pending.sign([privateKey]);
+    console.log("sign response:", test);
     const txid = await pending.submit(rpc);
     txIds.push(txid);
   }
